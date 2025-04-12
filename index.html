@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Warkop Bejo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">Warkop Bejo</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Tagline -->
+  <div class="tagline-container">
+    <p class="tagline">Selamat datang di Warkop Bejo — Ngopi santai, harga bersahabat!</p>
+  </div>
+
+  <!-- Slider -->
+  <section class="slider">
+    <!-- Arrow Buttons -->
+    <button class="arrow left" onclick="scrollSlider(-1)">&#10094;</button>
+    <button class="arrow right" onclick="scrollSlider(1)">&#10095;</button>
+
+    <div class="slider-container" id="slider">
+      <div class="slide">
+        <img src="Warkop Bejo 1.jpg" alt="Warkop 1">
+      </div>
+      <div class="slide">
+        <img src="Warkop Bejo 2.jpg" alt="Warkop 2">
+      </div>
+      <div class="slide">
+        <img src="Warkop Bejo 3.jpg" alt="Warkop 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Warkop Bejo. Nongkrong Asik 24 Jam!</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const slider = document.getElementById("slider");
+    let scrollAmount = 0;
+    const slideWidth = slider.offsetWidth;
+
+    function scrollSlider(direction) {
+      const slide = slider.querySelector(".slide");
+      const width = slide.offsetWidth + 30; // include gap
+      slider.scrollBy({ left: direction * width, behavior: 'smooth' });
+    }
+
+    // Autoplay slider
+    setInterval(() => {
+      scrollSlider(1);
+    }, 5000); // slide setiap 5 detik
+  </script>
+
+</body>
+</html>
